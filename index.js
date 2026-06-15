@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const TOKEN = process.env.BOT_TOKEN;
-const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_ID = '1516116533431242843';
 const BANLIST_FILE = path.join(__dirname, 'banlist.json');
 const SHAMAN_ROLE = 'shaman';
 
