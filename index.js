@@ -1,9 +1,14 @@
+require('dotenv').config();
 const { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 
 const TOKEN = process.env.BOT_TOKEN;
-const CLIENT_ID = '1516116533431242843';
+const CLIENT_ID = process.env.CLIENT_ID;
+if (!TOKEN || !CLIENT_ID) {
+  console.error('Missing BOT_TOKEN or CLIENT_ID — copy .env.example to .env and fill it in (or set them as host environment variables).');
+  process.exit(1);
+}
 const BANLIST_FILE = path.join(__dirname, 'banlist.json');
 const SHAMAN_ROLE = 'shaman';
 
